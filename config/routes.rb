@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   get 'users/:type', to: 'users#index'
+  get 'users/detail/:id', to: 'users#show'
   resources :users
 
   resources :articles do

@@ -10,26 +10,31 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    render json: @user
+  end
+
   def index
     case params[:type]
     when 'DigitalMediaTechnologyTeam'
-    #@user = User.find_by_professionalTeam('数字媒体技术')
+
     @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '数字媒体技术')")
         render json: @user
       when 'AnimationTeam'
-        #@user = User.find_by_professionalTeam('动画')
+
         @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '动画')")
         render json: @user
       when 'DigitalMediaArtTeam'
-        #@user = User.find_by_professionalTeam('数字媒体艺术')
+
         @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '数字媒体艺术')")
         render json: @user
       when 'FilmPhotographyTeam'
-        #@user = User.find_by_professionalTeam('影视设计与制作')
+
         @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '影视设计与制作')")
         render json: @user
       when 'VisualCommunicationDesignTeam'
-        #@user = User.find_by_professionalTeam('视觉传达设计')
+
         @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '视觉传达设计')")
         render json: @user
     end
