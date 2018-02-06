@@ -1,0 +1,20 @@
+<!--scope: :article 将表单中所有的数据都存放在 :article中-->
+<!--#url：articles_path 指向的就是routes中 带有articles前缀的所有的url，form表单在提交的时候默认使用的是POST方法-->
+<!--#所以根据articles资源中所提供的url，将会执行articles/create  action-->
+<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', articles_path %>
