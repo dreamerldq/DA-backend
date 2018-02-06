@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
   get 'users/:type', to: 'users#index'
   get 'users/detail/:id', to: 'users#show'
-  resources :users
-
-  resources :articles do
-    resources :comments
-  end
-  root 'welcome#index'
+  resources :users, :news
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
