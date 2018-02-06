@@ -22,19 +22,15 @@ class UsersController < ApplicationController
     @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '数字媒体技术')")
         render json: @user
       when 'AnimationTeam'
-
         @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '动画')")
         render json: @user
       when 'DigitalMediaArtTeam'
-
         @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '数字媒体艺术')")
         render json: @user
       when 'FilmPhotographyTeam'
-
         @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '影视设计与制作')")
         render json: @user
       when 'VisualCommunicationDesignTeam'
-
         @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '视觉传达设计')")
         render json: @user
     end
