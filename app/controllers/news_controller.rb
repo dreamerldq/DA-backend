@@ -5,7 +5,7 @@ class NewsController < ApplicationController
       if @news.save
         render json: @news
       else
-        render '创建失败'
+        render json: '创建失败'
       end
     end
 
@@ -14,6 +14,12 @@ class NewsController < ApplicationController
       render json: @news
     end
 
+    def destroy
+      @news = News.find(params[:id])
+      @news.destroy
+      @news = News.all
+      render json: @news
+    end
     def index
       @news = News.all
       render json:  @news
