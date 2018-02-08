@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
     skip_before_action :verify_authenticity_token
     def create
-      @project = Profession.new(project_params)
+      @project = Project.new(project_params)
       if @project.save
         render json: @project
       else
@@ -11,12 +11,12 @@ class ProjectsController < ApplicationController
     end
 
     def show
-      @project = Profession.find(params[:id])
+      @project = Project.find(params[:id])
       render json: @project
     end
 
     def index
-      @project = Profession.all
+      @project = Project.all
       render json: @project
     end
     private
