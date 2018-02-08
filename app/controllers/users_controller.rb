@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   def index
     case params[:type]
     when 'DigitalMediaTechnologyTeam'
-
     @user = User.find_by_sql("SELECT * FROM users WHERE (users.professionalTeam = '数字媒体技术')")
         render json: @user
       when 'AnimationTeam'
