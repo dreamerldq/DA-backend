@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyText
-  password: MyText
-
-two:
-  username: MyText
-  password: MyText
+  username: '10000004'
+  password: 'muse0106'
+  award: '这是我获得的奖励'
+  education: '学士'
+  email: '845790692@qq.com'
+  graduatedSchool: '大连东软信息学院'
+  jobTitle: '教授'
+  name: '李丹秋'
+  patent: '国家专利'
+  phone: '17615160540'
+  research: '最新研究成果'
+  researchDirection: '人工智能'
+  studentAward: '带领学生获得的奖励'
+  teacherTrainning: '最近参加的培训'

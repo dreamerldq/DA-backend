@@ -7,6 +7,11 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :phone, presence: true
   validates :professionalTeam, presence: true
-  validates :researchDirection, presence: true
+
+  validates :patent, presence: false
+  validates :research, presence: false
+  validates :award, presence: false
+  validates :studentAward, presence: false
+  validates :teacherTrainning, presence: false
 
 end

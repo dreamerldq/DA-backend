@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180209025139) do
+ActiveRecord::Schema.define(version: 20180210031659) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -88,6 +88,11 @@ ActiveRecord::Schema.define(version: 20180209025139) do
     t.text "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "patent"
+    t.text "research"
+    t.text "award"
+    t.text "studentAward"
+    t.text "teacherTrainning"
   end
 
 end
