@@ -13,7 +13,6 @@ class NewsController < ApplicationController
       @news = News.find(params[:id])
       render json: @news
     end
-
     def destroy
       @news = News.find(params[:id])
       @news.destroy
