@@ -11,6 +11,17 @@ class ProfessionsController < ApplicationController
 
   end
 
+  def update
+    @profession = Profession.find_by_sql("SELECT * FROM professions WHERE (professions.professionName = '#{params[:id]}')")
+    @aloneProfession = @profession[0]
+    if @aloneProfession.update(profession_params)
+      render json: @aloneProfession
+    else
+      render json: @aloneProfession.errors
+    end
+
+  end
+
   def show
     @profession = Profession.find_by_sql("SELECT * FROM professions WHERE (professions.professionName = '#{params[:id]}')")
     render json: @profession
