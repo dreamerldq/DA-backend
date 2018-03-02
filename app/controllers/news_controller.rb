@@ -8,7 +8,11 @@ class NewsController < ApplicationController
         render json: '创建失败'
       end
     end
-
+    def update
+      @news = News.find(params[:id])
+      @news.update(user_params)
+      render json: @news
+    end
     def show
       @news = News.find(params[:id])
       render json: @news
