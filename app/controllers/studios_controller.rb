@@ -9,7 +9,11 @@ class StudiosController < ApplicationController
     end
 
   end
-
+  def update
+    @studio = Studio.find(params[:id])
+    @studio.update(studio_params)
+    render json: @studio
+  end
   def index
     @studio = Studio.all
     render json: @studio
